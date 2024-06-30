@@ -1,0 +1,85 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "WETH9",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "factory",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"WETH9()": {
+					"returns": {
+						"_0": "Returns the address of WETH9"
+					}
+				},
+				"factory()": {
+					"returns": {
+						"_0": "Returns the address of the Uniswap V3 factory"
+					}
+				}
+			},
+			"title": "Immutable state",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Functions that return immutable state of the router",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts_rename/interfaces/IPeripheryImmutableState.sol": "IPeripheryImmutableState"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts_rename/interfaces/IPeripheryImmutableState.sol": {
+			"keccak256": "0xe5f274fc59251356fdcddad58c3927c3b156301f13c98424ea37ed39af3fa6da",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://55a46b99e05de3af2e18e648b4a70eee6186ba1bfe48e76141137ee7c629ed1c",
+				"dweb:/ipfs/QmckEaF9umbtegxEAZZKPJ9JkgZQsC2kz9QK7upavtKoRp"
+			]
+		}
+	},
+	"version": 1
+}

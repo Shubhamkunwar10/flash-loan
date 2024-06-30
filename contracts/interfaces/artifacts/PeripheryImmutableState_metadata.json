@@ -1,0 +1,96 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "WETH9",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "factory",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"stateVariables": {
+				"WETH9": {
+					"return": "Returns the address of WETH9",
+					"returns": {
+						"_0": "Returns the address of WETH9"
+					}
+				},
+				"factory": {
+					"return": "Returns the address of the Uniswap V3 factory",
+					"returns": {
+						"_0": "Returns the address of the Uniswap V3 factory"
+					}
+				}
+			},
+			"title": "Immutable state",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Immutable state used by periphery contracts",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts_rename/interfaces/PeripheryImmutableState.sol": "PeripheryImmutableState"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts_rename/interfaces/IPeripheryImmutableState.sol": {
+			"keccak256": "0xe5f274fc59251356fdcddad58c3927c3b156301f13c98424ea37ed39af3fa6da",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://55a46b99e05de3af2e18e648b4a70eee6186ba1bfe48e76141137ee7c629ed1c",
+				"dweb:/ipfs/QmckEaF9umbtegxEAZZKPJ9JkgZQsC2kz9QK7upavtKoRp"
+			]
+		},
+		"contracts_rename/interfaces/PeripheryImmutableState.sol": {
+			"keccak256": "0x5372005eea557df2ca94091e38789a7207363d0f1974d9c212714c8575b9603e",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://02937e4060985bd9f920a18f8a692ea21a603552c6851732079447e4c5a5f1ab",
+				"dweb:/ipfs/QmXBnDSKtYBmbCjqh2n7DzPYXrMKpMg4eEoB978raAnmmr"
+			]
+		}
+	},
+	"version": 1
+}

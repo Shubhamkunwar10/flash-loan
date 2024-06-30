@@ -1,0 +1,426 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract ISwapRouter",
+						"name": "_swapRouter",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_factory",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_WETH9",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "WETH9",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "factory",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					},
+					{
+						"internalType": "uint24",
+						"name": "fee1",
+						"type": "uint24"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint24",
+						"name": "fee2",
+						"type": "uint24"
+					},
+					{
+						"internalType": "uint24",
+						"name": "fee3",
+						"type": "uint24"
+					}
+				],
+				"name": "initFlash",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "refundETH",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "swapRouter",
+				"outputs": [
+					{
+						"internalType": "contract ISwapRouter",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountMinimum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					}
+				],
+				"name": "sweepToken",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "fee0",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fee1",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "uniswapV3FlashCallback",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountMinimum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					}
+				],
+				"name": "unwrapWETH9",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"refundETH()": {
+					"details": "Useful for bundling with mint or increase liquidity that uses ether, or exact output swaps that use ether for the input amount"
+				},
+				"sweepToken(address,uint256,address)": {
+					"details": "The amountMinimum parameter prevents malicious contracts from stealing the token from users",
+					"params": {
+						"amountMinimum": "The minimum amount of token required for a transfer",
+						"recipient": "The destination address of the token",
+						"token": "The contract address of the token which will be transferred to `recipient`"
+					}
+				},
+				"uniswapV3FlashCallback(uint256,uint256,bytes)": {
+					"details": "fails if the flash is not profitable, meaning the amountOut from the flash is less than the amount borrowed",
+					"params": {
+						"data": "The data needed in the callback passed as FlashCallbackData from `initFlash`",
+						"fee0": "The fee from calling flash for token0",
+						"fee1": "The fee from calling flash for token1"
+					}
+				},
+				"unwrapWETH9(uint256,address)": {
+					"details": "The amountMinimum parameter prevents malicious contracts from stealing WETH9 from users.",
+					"params": {
+						"amountMinimum": "The minimum amount of WETH9 to unwrap",
+						"recipient": "The address receiving ETH"
+					}
+				}
+			},
+			"title": "Flash contract implementation",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"refundETH()": {
+					"notice": "Refunds any ETH balance held by this contract to the `msg.sender`"
+				},
+				"sweepToken(address,uint256,address)": {
+					"notice": "Transfers the full amount of a token held by this contract to recipient"
+				},
+				"uniswapV3FlashCallback(uint256,uint256,bytes)": {
+					"notice": "implements the callback called from flash"
+				},
+				"unwrapWETH9(uint256,address)": {
+					"notice": "Unwraps the contract's WETH9 balance and sends it to recipient as ETH."
+				}
+			},
+			"notice": "An example contract using the Uniswap V3 flash function",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts_rename/FlashLoan.sol": "FlashLoan"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+				"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+			]
+		},
+		"@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol": {
+			"keccak256": "0xfe6113d518466cd6652c85b111e01f33eb62157f49ae5ed7d5a3947a2044adb1",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://1c42b9e6f5902ac38dd43e25750939baa7e0c1425dc75afd717c4412731065d5",
+				"dweb:/ipfs/QmWaoacnzsucTvBME2o7YgZBZMhaHv7fkj83htHMVWJKWh"
+			]
+		},
+		"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol": {
+			"keccak256": "0x9453dd0e7442188667d01d9b65de3f1e14e9511ff3e303179a15f6fc267f7634",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://982f4328f956c3e60e67501e759eb292ac487f76460c774c50e9ae4fcc92aae5",
+				"dweb:/ipfs/QmRnzEDsaqtd9PJEVcgQi7p5aV5pMSvRUoGZJAdwFUJxgZ"
+			]
+		},
+		"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol": {
+			"keccak256": "0xe603ac5b17ecdee73ba2b27efdf386c257a19c14206e87eee77e2017b742d9e5",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://8febc9bdb399a4d94bb89f5377732652e2400e4a8dee808201ade6848f9004e7",
+				"dweb:/ipfs/QmaKDqYYFU4d2W2iN77aDHptfbFmYZRrMYXHeGpJmM8C1c"
+			]
+		},
+		"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol": {
+			"keccak256": "0x8071514d0fe5d17d6fbd31c191cdfb703031c24e0ece3621d88ab10e871375cd",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://d0b571930cc7488b1d546a7e9cea7c52d8b3c4e207da657ed0e0db7343b8cd03",
+				"dweb:/ipfs/QmaGK6vVwB95QSTR1XMYvrh7ivYAYZxi3fD7v6VMA4jZ39"
+			]
+		},
+		"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol": {
+			"keccak256": "0xf6e5d2cd1139c4c276bdbc8e1d2b256e456c866a91f1b868da265c6d2685c3f7",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://b99c8c9ae8e27ee6559e5866bea82cbc9ffc8247f8d15b7422a4deb287d4d047",
+				"dweb:/ipfs/QmfL8gaqt3ffAnm6nVj5ksuNpLygXuL3xq5VBqrkwC2JJ3"
+			]
+		},
+		"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol": {
+			"keccak256": "0x759b78a2918af9e99e246dc3af084f654e48ef32bb4e4cb8a966aa3dcaece235",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://64144fb96e1c7fdba87305acadb98a198d26a3d46c097cb3a666e567f6f29735",
+				"dweb:/ipfs/QmUnWVwN9FKB9uV5Pr8YfLpWZnYM2DENnRMaadZ492JS9u"
+			]
+		},
+		"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol": {
+			"keccak256": "0x852dc1f5df7dcf7f11e7bb3eed79f0cea72ad4b25f6a9d2c35aafb48925fd49f",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://ed63907c38ff36b0e22bc9ffc53e791ea74f0d4f0e7c257fdfb5aaf8825b1f0f",
+				"dweb:/ipfs/QmSQrckghEjs6HVsA5GVgpNpZWvTXMY5eQLF7cN6deFeEg"
+			]
+		},
+		"@uniswap/v3-core/contracts/libraries/LowGasSafeMath.sol": {
+			"keccak256": "0x86715eb960f18e01ac94e3bba4614ed51a887fa3c5bd1c43bf80aa98e019cf2d",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://bfc1d5d58e59015086b0e65a6c3a2ddad312e2350480510f6c0c8167f3d71a37",
+				"dweb:/ipfs/QmQndULYjFsHKHjMAKLMfc12vWbVB5FawtioHtvwcWRJZp"
+			]
+		},
+		"contracts_rename/FlashLoan.sol": {
+			"keccak256": "0x1115400f8d7f9a8022450ff6382a3e1ce8105e73e2331fb9d45c1cf9329629f0",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://5393d84b344bf3a8521a9a84c2a104f1932e923d9af6ea75f6b9bfd2f53e0b9d",
+				"dweb:/ipfs/QmbWuy62g1Um4hjPWpLNjsHTNoRH1NG2DaRMMBaFXqVdx1"
+			]
+		},
+		"contracts_rename/interfaces/CustomCustomTransferHelper.sol": {
+			"keccak256": "0x28b9c72b1338a1260f363a9e683ea751c29daf517d91993f5b38f210301a09b1",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://cad4d350e4c3dd6b4a78e764b95afa6b411aa3ee7e856a164d59aa3303ef89fc",
+				"dweb:/ipfs/QmPcLkKL6WAHWfWok4VYVBMXHVDbPvE4DCV5R73R4jbsWm"
+			]
+		},
+		"contracts_rename/interfaces/IPeripheryImmutableState.sol": {
+			"keccak256": "0xe5f274fc59251356fdcddad58c3927c3b156301f13c98424ea37ed39af3fa6da",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://55a46b99e05de3af2e18e648b4a70eee6186ba1bfe48e76141137ee7c629ed1c",
+				"dweb:/ipfs/QmckEaF9umbtegxEAZZKPJ9JkgZQsC2kz9QK7upavtKoRp"
+			]
+		},
+		"contracts_rename/interfaces/IPeripheryPayments.sol": {
+			"keccak256": "0x8e0cdb6280728619c44a8220996512b81e85f6fa7bc5373db742ea953a81eda8",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://f0748123e32874d0e1e405a463fafcf98f686fac0055da2e13bfdaa0db917766",
+				"dweb:/ipfs/QmRZPF69X1e6T3yT2z8HTgzEtXHTVScqzoEMbfvp5Niggq"
+			]
+		},
+		"contracts_rename/interfaces/ISwapRouter.sol": {
+			"keccak256": "0x3e60d1bec793a83ba7506cfc52ceed6a22069289b190522ea534531f1c0d27dd",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://78eec170ac118d238b166d74e794a2d8263efb9308aaeda9ebb28d1b581674e9",
+				"dweb:/ipfs/QmUj5KNFJrTy7rcsPbfFUbex7cfUkuY3BcGe7rhgYmuykQ"
+			]
+		},
+		"contracts_rename/interfaces/IUniswapV3FlashCallback.sol": {
+			"keccak256": "0x3bb3bd0d45e438e9c9222e633affeb2f708fa60c9d25bb59ed1dbea73be8f6e0",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://d2da5814b9acbc2ea6c07d663b05b9b9e5e323ba125250aeae66f61d2f41176c",
+				"dweb:/ipfs/QmQM6ekTRV9B2xzG9EfWACb3Z4aTGmbHs7QUsj9LGBn16J"
+			]
+		},
+		"contracts_rename/interfaces/IUniswapV3SwapCallback.sol": {
+			"keccak256": "0x013cc701717e28b2f5bd92d7a7729f68925afb11a1e8128e1c8aa36be8c9578f",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://bc4de4e039a32dc739c5200ec1d685458cd542169350bb212c8954dfd3bace27",
+				"dweb:/ipfs/QmZCq4SeDZ31wTkQkU3jQHN2NrZUw26QG5WbRWTbDm8995"
+			]
+		},
+		"contracts_rename/interfaces/IWETH9.sol": {
+			"keccak256": "0x720871f2fd9edf1116935a82b8cf2b6c279a65d237822575c8683f0f9d6129fd",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://72239dfdab87e15dfe276c7ee55a76ab7b64a829300d7e6317584f2b25d36c12",
+				"dweb:/ipfs/QmWoe4WmWq1Z3cqmiro4BZ8z3MbKjWXSBo5Ywx8rKft8tv"
+			]
+		},
+		"contracts_rename/interfaces/PeripheryImmutableState.sol": {
+			"keccak256": "0x5372005eea557df2ca94091e38789a7207363d0f1974d9c212714c8575b9603e",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://02937e4060985bd9f920a18f8a692ea21a603552c6851732079447e4c5a5f1ab",
+				"dweb:/ipfs/QmXBnDSKtYBmbCjqh2n7DzPYXrMKpMg4eEoB978raAnmmr"
+			]
+		},
+		"contracts_rename/interfaces/PeripheryPayments.sol": {
+			"keccak256": "0x58c458f1f6a71627c621d49a8826d8094c62721ea660d1b3dcdd966eb0edeb66",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://071617d3e983d92a03da738bc65aa232f346bdc7f54830c91ba55f614ca3459a",
+				"dweb:/ipfs/QmVCd1YbkmSxiJnVkFrjb4zeugQWRuwQB6QzvjnJzj8MBg"
+			]
+		},
+		"contracts_rename/libraries/CallbackValidation.sol": {
+			"keccak256": "0xaf55d873b07516317a89b7c02d82857c2bd8f7b5f96027a1a7fa814ccaeeebe9",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://52f9f83efbc4d08de149c6212ea6f4f9821eb43898e097d06f2ef21ca6f07716",
+				"dweb:/ipfs/QmRSfCNS2NPxXhQtjAcs2xXuAVzPNYLqA6YYtJwbghwA7h"
+			]
+		},
+		"contracts_rename/libraries/PoolAddress.sol": {
+			"keccak256": "0x741b5bbbb61f4836c0a09e199b856a0a15dc01deff8ad127e54aacd970a01060",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://c28f36044ced42f9b626fe6e7992c4252b978b5bbe7f55c4d2912a24e837bbd7",
+				"dweb:/ipfs/QmUdbNihNv2KRq2qccAzJYdzRqxbYtFHqnhHXP4hRE2EaN"
+			]
+		}
+	},
+	"version": 1
+}

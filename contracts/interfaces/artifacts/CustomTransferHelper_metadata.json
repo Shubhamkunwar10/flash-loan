@@ -1,0 +1,53 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts_rename/interfaces/CustomTransferHelper.sol": "CustomTransferHelper"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+				"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+			]
+		},
+		"contracts_rename/interfaces/CustomTransferHelper.sol": {
+			"keccak256": "0x28b9c72b1338a1260f363a9e683ea751c29daf517d91993f5b38f210301a09b1",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://cad4d350e4c3dd6b4a78e764b95afa6b411aa3ee7e856a164d59aa3303ef89fc",
+				"dweb:/ipfs/QmPcLkKL6WAHWfWok4VYVBMXHVDbPvE4DCV5R73R4jbsWm"
+			]
+		}
+	},
+	"version": 1
+}
