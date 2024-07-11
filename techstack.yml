@@ -1,0 +1,143 @@
+repo_name: Shubhamkunwar10/flash-loan
+report_id: e7a000ea033d8700f17d544f9a288c6e
+version: 0.1
+repo_type: Public
+timestamp: '2024-07-11T07:15:32+00:00'
+requested_by: Shubhamkunwar10
+provider: github
+branch: main
+detected_tools_count: 11
+tools:
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/Shubhamkunwar10/flash-loan
+  detection_source: Repo Metadata
+- name: Ethereum
+  description: Open source platform to write and distribute decentralized applications
+  website_url: https://ethereum.org
+  license: CC0-1.0
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Blockchain
+  image_url: https://img.stackshare.io/service/1634/default_dacdb57c0b4f9d422e4a23aed8b9bbf7a6024fed.jpg
+  detection_source_url: https://github.com/Shubhamkunwar10/flash-loan/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: shubhamkunwar10
+  last_updated_on: 2024-06-30 06:17:53.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/Shubhamkunwar10/flash-loan
+  detection_source: Repo Metadata
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/Shubhamkunwar10/flash-loan/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: shubhamkunwar10
+  last_updated_on: 2024-06-30 06:17:53.000000000 Z
+- name: solidity
+  description: How people build software
+  website_url: https://ethereum.github.io/solidity/
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/4959/1__IS8pZzkhvd6kUbSFpSgag.png
+  detection_source_url: https://github.com/Shubhamkunwar10/flash-loan
+  detection_source: Repo Metadata
+- name: web3
+  website_url: https://github.com/ethereum/web3.js/
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/8418/no-img-open-source.png
+  detection_source_url: https://github.com/Shubhamkunwar10/flash-loan/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: shubhamkunwar10
+  last_updated_on: 2024-06-30 06:17:53.000000000 Z
+- name: bip39
+  description: 'Bitcoin BIP39: Mnemonic code for generating deterministic keys'
+  package_url: https://www.npmjs.com/bip39
+  version: 3.1.0
+  license: ISC
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17210/default_eb6674f470fe213f950fd09d858ebb0f6b6e3dda.png
+  detection_source_url: https://github.com/Shubhamkunwar10/flash-loan/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: shubhamkunwar10
+  last_updated_on: 2024-06-30 06:17:53.000000000 Z
+- name: ethereumjs-tx
+  description: A simple module for creating
+  package_url: https://www.npmjs.com/ethereumjs-tx
+  version: 2.1.2
+  license: MPL-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17320/default_66bbb2a75a0234b1bfceaa99b8e82825fa7b8284.png
+  detection_source_url: https://github.com/Shubhamkunwar10/flash-loan/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: shubhamkunwar10
+  last_updated_on: 2024-06-30 06:17:53.000000000 Z
+- name: ethereumjs-wallet
+  description: Utilities for handling Ethereum keys
+  package_url: https://www.npmjs.com/ethereumjs-wallet
+  version: 1.0.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/18246/default_42444f560291e764861faaf607f48484f4d14cba.png
+  detection_source_url: https://github.com/Shubhamkunwar10/flash-loan/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: shubhamkunwar10
+  last_updated_on: 2024-06-30 06:17:53.000000000 Z
+- name: ethers
+  description: Umbrella package for most common Ethers libraries
+  package_url: https://www.npmjs.com/ethers
+  version: 5.7.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17297/default_3ec53c4dad64de27b72cc81401e898b5aea82f2c.png
+  detection_source_url: https://github.com/Shubhamkunwar10/flash-loan/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: shubhamkunwar10
+  last_updated_on: 2024-06-30 06:17:53.000000000 Z
+- name: web3
+  description: Ethereum JavaScript API
+  package_url: https://www.npmjs.com/web3
+  version: 4.3.0
+  license: LGPL-3.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16369/default_17385ab3aa01d4c295c08d4a9736140df691c5e9.png
+  detection_source_url: https://github.com/Shubhamkunwar10/flash-loan/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: shubhamkunwar10
+  last_updated_on: 2024-06-30 06:17:53.000000000 Z
